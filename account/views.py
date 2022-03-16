@@ -55,7 +55,7 @@ def forgot_password(request):
                 flag = False
             except:
                 continue
-        return Response({'code': code, 'message': 'Enter code sent to {}'.format(user.email)}, status=HTTP_200_OK)
+        return Response({'code': otp.code, 'message': 'Enter code sent to {}'.format(user.email)}, status=HTTP_200_OK)
     except Exception as e:
         return Response({'message': str(e)}, status=HTTP_400_BAD_REQUEST)
 
